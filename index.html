@@ -3,141 +3,356 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Подпишись в MAX и получи сет в подарок — Аппетит Челябинск</title>
-  <meta name="description" content="MAX-канал доставки еды «Аппетит» в Челябинске. Розыгрыши, промокоды, подарки и закрытые акции на роллы и пиццу.">
-  <meta property="og:title" content="Подпишись в MAX и получи сет в подарок — Аппетит Челябинск">
-  <meta property="og:description" content="MAX-канал доставки еды «Аппетит» в Челябинске. Розыгрыши, промокоды, подарки и закрытые акции на роллы и пиццу.">
-  <meta property="og:image" content="banner-bottom-clean.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/fav.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/fav.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/fav.png">
+
+  <title>Доставка роллов и пиццы в Челябинске — Аппетит. Подпишись в MAX и получи сет в подарок</title>
+  <meta name="description" content="Заказывай роллы и пиццу с доставкой по Челябинску от «Аппетит». Подпишись в MAX-канал и получи сет роллов в подарок. Акции, промокоды и розыгрыши каждую неделю.">
+  <link rel="canonical" href="https://ЗАМЕНИТЬ-ДОМЕН/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Доставка роллов и пиццы в Челябинске — получи сет в подарок">
+  <meta property="og:description" content="Подпишись в MAX-канал «Аппетит» и получи сет роллов бесплатно. Акции и промокоды на доставку еды по Челябинску.">
+  <meta property="og:image" content="https://ЗАМЕНИТЬ-ДОМЕН/banner-bottom-clean.png">
+  <meta property="og:image:alt" content="Аппетит — доставка роллов и пиццы в Челябинске, подпишись и получи сет в подарок">
+  <meta property="og:url" content="https://ЗАМЕНИТЬ-ДОМЕН/">
+  <meta property="og:site_name" content="Аппетит — доставка еды в Челябинске">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Доставка роллов и пиццы в Челябинске — получи сет в подарок">
+  <meta name="twitter:description" content="Подпишись в MAX-канал «Аппетит» и получи сет роллов бесплатно. Акции и промокоды на доставку еды по Челябинску.">
+  <meta name="twitter:image" content="https://ЗАМЕНИТЬ-ДОМЕН/banner-bottom-clean.png">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Аппетит",
+    "url": "https://ЗАМЕНИТЬ-ДОМЕН/",
+    "image": "https://ЗАМЕНИТЬ-ДОМЕН/banner-bottom-clean.png",
+    "areaServed": "Челябинск",
+    "servesCuisine": ["Роллы", "Суши", "Пицца"],
+    "sameAs": ["https://max.ru/id166101157610_6_bot"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Меню доставки еды Аппетит",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "MenuItem", "name": "Роллы"}},
+        {"@type": "Offer", "itemOffered": {"@type": "MenuItem", "name": "Суши"}},
+        {"@type": "Offer", "itemOffered": {"@type": "MenuItem", "name": "Пицца"}}
+      ]
+    }
+  }
+  </script>
+
+  <!-- TODO: Яндекс.Метрика — нужен отдельный счётчик для этого лендинга, см. ИНСТРУКЦИЯ.md -->
+  <!-- TODO: tgtrack-скрипт MAX — нужен свой chat ID для Челябинска, см. ИНСТРУКЦИЯ.md -->
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
     html,body{
       background:#F7F5F2;
-      margin:0;
-      padding:0;
+      margin:0;padding:0;
       overflow-x:hidden;
-      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      color:#1a1a1a;
     }
 
-    .banner-wrap{
+    /* ── Доступный sr-only ── */
+    .sr-only{
+      position:absolute;width:1px;height:1px;
+      padding:0;margin:-1px;overflow:hidden;
+      clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+
+    /* ── Обёртка: max-width 480px, mobile-first ── */
+    .wrap{
+      width:100%;
+      max-width:480px;
+      margin:0 auto;
+    }
+
+    /* ════════════════════════════
+       HERO — баннер
+    ════════════════════════════ */
+    .hero{
       position:relative;
       width:100%;
       max-width:480px;
       margin:0 auto;
       background:#F7F5F2;
     }
-
-    .main-banner{
+    .hero__img{
       display:block;
       width:100%;
       height:auto;
     }
-
-    .top-link-area{
-      position:absolute;
-      top:2.6%;
-      right:4%;
-      width:42%;
-      height:7%;
-      z-index:30;
-      display:block;
-      cursor:pointer;
-      -webkit-tap-highlight-color:transparent;
+    .hero-cta{
+      display:flex;
+      gap:3%;
+      padding:0 4%;
+      margin-top:12px;
+      position:relative;
+      z-index:5;
     }
-
-    .bottom-max-btn{
-      display:block;
-      position:absolute;
-      left:4%;
-      bottom:1%;
-      width:92%;
-      z-index:30;
-      background:transparent !important;
-      border:none;
-      padding:0;
-      margin:0;
+    @media(max-width:360px){
+      .hero-cta{flex-direction:column;gap:10px;}
+    }
+    .hero-btn{
+      flex:1;
+      display:flex;
+      min-height:58px;
+      border-radius:18px;
       text-decoration:none;
+      color:#fff;
+      box-shadow:0 4px 10px rgba(0,0,0,.12);
+      transition:transform .2s ease, box-shadow .2s ease;
+      transform-origin:center;
       -webkit-tap-highlight-color:transparent;
     }
-
-    .max-btn-img{
-      display:block;
-      width:100%;
-      height:auto;
-      background:transparent !important;
-      animation:breathe 2.6s ease-in-out infinite;
-      transform-origin:center;
+    @media(hover:hover){
+      .hero-btn:hover{
+        transform:scale(1.02);
+        box-shadow:0 6px 14px rgba(0,0,0,.18);
+      }
     }
-
+    .hero-btn:active{
+      transform:scale(0.98);
+      box-shadow:0 2px 6px rgba(0,0,0,.10);
+    }
+    .hero-btn__surface{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      padding:14px 16px;
+      border-radius:18px;
+      font-size:15px;
+      font-weight:700;
+      white-space:nowrap;
+      box-sizing:border-box;
+    }
+    .hero-btn--max .hero-btn__surface{
+      background:linear-gradient(135deg,#9D3EF0,#4A32D8);
+      animation:breathe 2.6s ease-in-out infinite, heroGlowMax 2.6s ease-in-out infinite;
+    }
+    .hero-btn--tg .hero-btn__surface{
+      background:linear-gradient(135deg,#2BB1EA,#0A6CCB);
+      animation:breathe 2.6s ease-in-out infinite, heroGlowTg 2.6s ease-in-out infinite;
+    }
+    .hero-btn__icon{
+      display:flex;align-items:center;justify-content:center;
+      width:30px;height:30px;flex-shrink:0;
+      background:rgba(255,255,255,.2);
+      border-radius:50%;
+    }
+    .hero-btn__label{flex:1;text-align:left;margin-left:2px;}
+    .hero-btn__arrow{flex-shrink:0;opacity:.9;}
     @keyframes breathe{
       0%,100%{transform:scale(1)}
-      50%     {transform:scale(1.025)}
+      50%    {transform:scale(1.025)}
+    }
+    @keyframes heroGlowMax{
+      0%,100%{box-shadow:0 6px 16px rgba(91,33,182,.35)}
+      50%    {box-shadow:0 6px 22px rgba(157,62,240,.55)}
+    }
+    @keyframes heroGlowTg{
+      0%,100%{box-shadow:0 6px 16px rgba(10,108,203,.35)}
+      50%    {box-shadow:0 6px 22px rgba(43,177,234,.55)}
     }
 
-    @media(hover:hover){
-      .bottom-max-btn:hover .max-btn-img{
-        animation:none;
-        transform:scale(1.04);
-        transition:transform .2s ease;
+    /* ════════════════════════════
+       ОБЩИЕ СЕКЦИИ
+    ════════════════════════════ */
+    section{
+      width:100%;
+      max-width:480px;
+      margin:0 auto;
+      padding:24px 20px;
+    }
+    section + section{
+      padding-top:0;
+    }
+
+    h2{
+      font-size:18px;
+      font-weight:700;
+      line-height:1.3;
+      margin-bottom:12px;
+      color:#111;
+    }
+    h3{
+      font-size:15px;
+      font-weight:600;
+      margin-bottom:6px;
+      color:#222;
+    }
+    p{
+      font-size:14px;
+      line-height:1.55;
+      color:#444;
+    }
+
+    /* ════════════════════════════
+       ВИЗУАЛЬНЫЙ БАННЕР (топ 2.png)
+    ════════════════════════════ */
+    .visual-banner{padding:0 28px}
+
+    @media(max-width:480px){
+      .hero,
+      .visual-banner{
+        padding:0;
       }
     }
 
-    .bottom-max-btn:active .max-btn-img{
-      animation:none;
-      transform:scale(0.96);
-      transition:transform .1s ease;
-    }
-
-    .seo-block{
+    .visual-banner__frame{
+      position:relative;
+      width:100%;
       max-width:480px;
       margin:0 auto;
-      padding:10px 18px 14px;
-      background:#F7F5F2;
+    }
+    .visual-banner__img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .banner-overlay{
+      position:absolute;
+      background:transparent;
+      outline:none;
+      border:none;
+      border-radius:24px;
+    }
+    .banner-overlay--max.banner-overlay--cta{ animation:overlayPulseMax 3s ease-in-out infinite; }
+    .banner-overlay--tg.banner-overlay--cta { animation:overlayPulseTg  3s ease-in-out infinite; }
+    @keyframes overlayPulseMax{
+      0%,100%{ box-shadow:0 0 0 rgba(157,62,240,0); }
+      50%    { box-shadow:0 0 10px 1px rgba(157,62,240,.25); }
+    }
+    @keyframes overlayPulseTg{
+      0%,100%{ box-shadow:0 0 0 rgba(43,177,234,0); }
+      50%    { box-shadow:0 0 10px 1px rgba(43,177,234,.25); }
+    }
+    .banner-overlay--max.banner-overlay--channel{ top:26.2%; left:4.2%;  width:44.8%; height:12.2%; animation:overlayPulseMax 3s ease-in-out infinite; }
+    .banner-overlay--tg.banner-overlay--channel { top:26.2%; left:51%;   width:44.8%; height:12.2%; animation:overlayPulseTg  3s ease-in-out infinite; }
+    .banner-overlay--max.banner-overlay--cta    { top:91.7%; left:4.2%;  width:44.8%; height:3.7%;  }
+    .banner-overlay--tg.banner-overlay--cta     { top:91.7%; left:51%;   width:44.8%; height:3.7%;  }
+
+    /* ════════════════════════════
+       SEO-ФУТЕР
+    ════════════════════════════ */
+    .seo-footer{
+      max-width:480px;margin:0 auto;
+      padding:10px 20px 20px;
       color:rgba(40,40,40,.32);
-      font-size:11px;
-      line-height:1.5;
-      text-align:center;
+      font-size:10px;line-height:1.5;text-align:center;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="banner-wrap">
+<!-- H1 скрытый — SEO-якорь страницы -->
+<h1 class="sr-only">Доставка роллов и пиццы в Челябинске — Аппетит</h1>
 
-    <img
-      src="banner-bottom-clean.png"
-      class="main-banner"
-      alt="Подпишись в MAX и получи сет в подарок — Аппетит Челябинск"
-      width="1024"
-      height="1536"
-      loading="eager"
-      fetchpriority="high"
-    >
-
-    <a
-      href="https://max.ru/appetit_dostavka/AZ4rue3mKJE"
-      class="top-link-area"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Подписаться в MAX"
-    ></a>
-
-    <a
-      href="https://max.ru/appetit_dostavka/AZ4rue3mKJE"
-      class="bottom-max-btn"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src="btn-bottom.png" class="max-btn-img" alt="Подпишись в MAX и получи сет в подарок">
+<!-- ══ HERO ══ -->
+<section class="hero" aria-label="Главный баннер">
+  <img
+    src="hero-top.png"
+    class="hero__img"
+    alt="Доставка роллов и пиццы в Челябинске — Аппетит. Подпишись в MAX или Telegram и получи сет в подарок"
+    width="1054" height="1294"
+    loading="eager" fetchpriority="high"
+  >
+  <div class="hero-cta">
+    <a href="https://max.ru/id166101157610_6_bot?utm_source=landing&utm_medium=hero&utm_campaign=appetit_subscribe&utm_content=max"
+       data-goal="max_click_hero"
+       class="hero-btn hero-btn--max"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в MAX">
+      <span class="hero-btn__surface">
+        <span class="hero-btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3C7.03 3 3 6.58 3 11c0 2.39 1.18 4.53 3.06 6.02-.1.94-.41 2.1-1.06 3.48 1.66-.23 2.95-.84 3.96-1.5A10.6 10.6 0 0 0 12 19c4.97 0 9-3.58 9-8s-4.03-8-9-8Z" fill="#fff"/></svg>
+        </span>
+        <span class="hero-btn__label">MAX</span>
+        <svg class="hero-btn__arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
     </a>
-
+    <a href="https://t.me/AppetitChelyabinck_bot?utm_source=landing&utm_medium=hero&utm_campaign=appetit_subscribe&utm_content=telegram"
+       data-goal="telegram_click_hero"
+       class="hero-btn hero-btn--tg"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в Telegram">
+      <span class="hero-btn__surface">
+        <span class="hero-btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M21 4 2.5 11.3c-.7.27-.66 1.28.06 1.5l4.4 1.36 1.7 5.27c.2.62 1 .76 1.43.26l2.4-2.78 4.5 3.34c.6.45 1.46.12 1.6-.62L23 5.2c.15-.8-.66-1.45-1.4-1.16Z" fill="#fff"/></svg>
+        </span>
+        <span class="hero-btn__label">Telegram</span>
+        <svg class="hero-btn__arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
   </div>
+</section>
 
-  <div class="seo-block">
-    Доставка роллов и пиццы в Челябинске. Акции, промокоды и розыгрыши от «Аппетит». Доставка еды Челябинск, роллы и пицца Челябинск, акции на роллы, заказать роллы Челябинск, доставка пиццы Челябинск.
+<!-- ══ ВИЗУАЛЬНЫЙ БАННЕР (топ 2.png) ══ -->
+<section class="visual-banner" aria-label="Закрытые акции, подписка на канал и часто задаваемые вопросы">
+  <div class="visual-banner__frame">
+    <img
+      src="новый баннер/топ 2.png"
+      class="visual-banner__img"
+      alt="Аппетит: подпишись в MAX или Telegram, получи закрытые акции и подарок"
+      width="790" height="1738"
+      loading="lazy" decoding="async"
+    >
+    <a href="https://max.ru/id166101157610_6_bot?utm_source=landing&utm_medium=middle&utm_campaign=appetit_subscribe&utm_content=max"
+       data-goal="max_click_mid"
+       class="banner-overlay banner-overlay--max banner-overlay--channel"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в MAX"></a>
+    <a href="https://t.me/AppetitChelyabinck_bot?utm_source=landing&utm_medium=middle&utm_campaign=appetit_subscribe&utm_content=telegram"
+       data-goal="telegram_click_mid"
+       class="banner-overlay banner-overlay--tg banner-overlay--channel"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в Telegram"></a>
+    <a href="https://max.ru/id166101157610_6_bot?utm_source=landing&utm_medium=bottom&utm_campaign=appetit_subscribe&utm_content=max"
+       data-goal="max_click_bottom"
+       class="banner-overlay banner-overlay--max banner-overlay--cta"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в MAX"></a>
+    <a href="https://t.me/AppetitChelyabinck_bot?utm_source=landing&utm_medium=bottom&utm_campaign=appetit_subscribe&utm_content=telegram"
+       data-goal="telegram_click_bottom"
+       class="banner-overlay banner-overlay--tg banner-overlay--cta"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в Telegram"></a>
   </div>
+</section>
+
+<!-- ══ SEO-ФУТЕР ══ -->
+<footer class="seo-footer">
+  Доставка роллов и пиццы в Челябинске. Акции, промокоды и розыгрыши от «Аппетит».
+  Доставка еды Челябинск, роллы и пицца Челябинск, заказать роллы Челябинск, доставка пиццы Челябинск.
+</footer>
+
+<script>
+  // Трекинг всех CTA-кликов.
+  // TODO: подставить реальный ID счётчика Яндекс.Метрики — см. ИНСТРУКЦИЯ.md
+  var METRIKA_COUNTER_ID = null;
+  document.querySelectorAll('[data-goal]').forEach(function(el){
+    el.addEventListener('click', function(){
+      if (METRIKA_COUNTER_ID && typeof ym !== 'undefined') {
+        ym(METRIKA_COUNTER_ID, 'reachGoal', el.dataset.goal);
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
